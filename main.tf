@@ -7,7 +7,7 @@ provider "google" {
 
 resource "google_folder" "Financeiro" {
   display_name = "Financeiro"
-  parent       = "organizations/674618817316"  #[ insira o numero da sua org]
+  parent       = "organizations/[Insira-Sua-Org]"  
 }
 
 resource "google_folder" "SalesForce" {
@@ -22,11 +22,11 @@ resource "google_folder" "Producao" {
 
 
 resource "google_project" "desync-salesforce-prod" {
-  name       = "SalesForce-Dev"
-  project_id = "barberosa2-salesforce-dev"
+  name       = "SalesForce-Prod"
+  project_id = "desync-salesforce-prod"
   folder_id  = google_folder.Producao.name
   auto_create_network=false
-  billing_account = "018973-A8340F-83D8E5"
+  billing_account = "[Insira-sua-billing-account]"
 
 }
 
@@ -41,10 +41,10 @@ resource "google_folder" "Producao" {
 }
 
 resource "google_project" "desync-conta_azul-prod" {
-  name       = "SalesForce-Dev"
-  project_id = "barberosa2-salesforce-dev"
+  name       = "ContaAzul-Prod"
+  project_id = "desync-conta_azul-prod"
   folder_id  = google_folder.Producao.name
   auto_create_network=false
-  billing_account = "018973-A8340F-83D8E5"
+  billing_account = "[Insira-Sua-billing-account]"
   
   }
